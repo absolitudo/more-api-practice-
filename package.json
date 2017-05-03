@@ -1,0 +1,17 @@
+{
+  "name": "request-header-parser",
+  "version": "1.0.0",
+  "description": "practice proj",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Ákos",
+  "license": "ISC",
+  "engines": {
+    "node": "6.10.2"
+  },
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
