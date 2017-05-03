@@ -2,9 +2,9 @@ var express = require("express"),
     app = express();
 app.use(express.static("./static"));
 app.get("/api/whoami", function(req, res) {
-    res.sendFile(__dirname + "/static/index.html");
+    console.log(JSON.stringify(req.headers));
     res.send({
-        "ipaddress": req.headers.host,
+        "ipaddress": (req.headers['x-forwarded-for'] || '').split(',')[0]  || req.connection.remoteAddress,
         "language": req.headers["accept-language"].slice(0, 5),
         "software": req.headers["user-agent"]
     });
